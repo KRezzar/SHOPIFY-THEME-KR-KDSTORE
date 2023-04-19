@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'section-related-products.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .kr-rps .grid__item{
+      background-color:rgb(var(--kr-color-background-2));
+      border-radius:20px;
+      padding:20px;
+  }
+  .kr-rps .related-products__heading{
+      color:rgb(var(--kr-color-background-2));
+
+  }
+{%- endstyle -%}
+
+<div class=" no-js-hidden kr-rps">
+  <product-recommendations
+    class="related-products page-width section-{{ section.id }}-padding isolate"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+  >
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <h2 class="related-products__heading {{ section.settings.heading_size }}">
+        You May also like
+      </h2>
+      <ul
+        class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down"
+        role="list"
+      >
+        {% for recommendation in recommendations.products %}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </product-recommendations>
+</div>

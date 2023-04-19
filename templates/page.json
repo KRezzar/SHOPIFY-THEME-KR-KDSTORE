@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "19c4fbeb-0c63-4de6-b1eb-d51972194aa5": {
+      "type": "rich-text",
+      "blocks": {
+        "945f4039-03e8-4382-937b-37c9e9f45494": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Terms and Conditions<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--18226602115392__19c4fbeb-0c63-4de6-b1eb-d51972194aa5-1681260280cc99a166-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h4><strong>In order to ensure a safe and enjoyable shopping experience for everyone, please read and agree to the following terms and conditions:<\/strong><\/h4>",
+            "heading_size": "h1"
+          }
+        },
+        "template--18226602115392__19c4fbeb-0c63-4de6-b1eb-d51972194aa5-1681260280cc99a166-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><\/p><ol><li>Age Restrictions: Our Kids Store is intended for children aged 13 and under. By using our website, you confirm that you are of this age or have parental consent to use our site.<\/li><li>Product Descriptions: We make every effort to accurately describe our products, including their features, sizes, and materials. However, we cannot guarantee that all descriptions will be completely accurate. Please contact us if you have any questions or concerns about a product.<\/li><li>Pricing and Payment: All prices listed on our website are in US dollars and are subject to change without notice. We accept major credit cards and PayPal as forms of payment.<\/li><li>Shipping and Delivery: We strive to process and ship orders as quickly as possible. Orders are typically processed within 1-2 business days. Shipping times may vary depending on your location and shipping method selected.<\/li><li>Returns and Exchanges: We want you to be completely satisfied with your purchase. If for any reason you are not satisfied, please contact us within 14 days of receipt of your order. We accept returns and exchanges of unused, unwashed, and undamaged merchandise, with all tags and packaging intact.<\/li><li>Privacy: We respect your privacy and are committed to protecting your personal information. We do not share or sell your information to third parties. Please review our Privacy Policy for more information.<\/li><li>Use of the Site: By using our website, you agree to comply with all applicable laws and regulations. You may not use our site for any unlawful or unauthorized purpose.<\/li><li>Modifications to Terms and Conditions: We reserve the right to modify these terms and conditions at any time. By continuing to use our site after modifications have been made, you agree to be bound by the revised terms.<\/li><\/ol><p><\/p>"
+          }
+        },
+        "803c2afb-e118-4ec2-903c-047bae2e1f23": {
+          "type": "caption",
+          "settings": {
+            "caption": "Thank you for shopping with us! If you have any questions or concerns about these terms and conditions, please contact us.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "945f4039-03e8-4382-937b-37c9e9f45494",
+        "template--18226602115392__19c4fbeb-0c63-4de6-b1eb-d51972194aa5-1681260280cc99a166-0",
+        "template--18226602115392__19c4fbeb-0c63-4de6-b1eb-d51972194aa5-1681260280cc99a166-1",
+        "803c2afb-e118-4ec2-903c-047bae2e1f23"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "19c4fbeb-0c63-4de6-b1eb-d51972194aa5"
+  ]
+}

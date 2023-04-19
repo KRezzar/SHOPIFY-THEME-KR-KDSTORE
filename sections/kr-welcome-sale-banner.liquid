@@ -1,0 +1,169 @@
+
+<style>
+  .container {
+    position: relative;
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+   
+  }
+  
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  .sample{
+    position: absolute;
+    top: 61%;
+    left: 13%;
+    width: 20vw;
+    background-color:#37ADF7;
+    font-size: 2vmax;
+    color:#fff;
+    padding: 1.5% 0px;
+    border: 2px solid transparent;
+    padding-left:1%;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  
+</style>
+
+<!-- <div class="container">
+  <img src="https://cdn.shopify.com/s/files/1/0690/5839/6480/files/Sale_Banner_1080x720.png?v=1677818903" alt="">
+  <button class="btn">Button</button>
+  <button class="sample" onclick="alert();">Shop Now</button>
+</div> -->
+
+
+ 
+
+<div class="container">
+  {%- if section.settings.link != blank -%}
+    <img src="{{ section.settings.link }}"
+  {%- endif -%}
+  
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | img_url: '1080x720'  | img_tag: section.settings.image.alt }}
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  
+  {%- if section.settings.link != blank -%}
+    >
+  {%- endif -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+
+        {%- when 'buttons' -%}
+            {%- if block.settings.button_label_1 != blank -%}
+              <a
+                {% if block.settings.button_link_1 == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ block.settings.button_link_1 }}"
+                {% endif %}
+                class="sample" >  {{- block.settings.button_label_1 | escape -}} &nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+            {%- endif -%}
+
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+      
+ 
+
+
+
+
+  
+{% schema %}
+{
+  "name": "DiscountBanner-KR", 
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Select your background Image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Optional"
+    }
+  ],
+    "blocks": [
+      {
+        "type": "buttons",
+        "name": "t:sections.image-banner.blocks.buttons.name",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_label_1",
+            "default": "Button label",
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
+            "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+          },
+          {
+            "type": "url",
+            "id": "button_link_1",
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "button_style_secondary_1",
+            "default": false,
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
+          },
+          {
+            "type": "text",
+            "id": "button_label_2",
+            "default": "Button label",
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
+            "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
+          },
+          {
+            "type": "url",
+            "id": "button_link_2",
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "button_style_secondary_2",
+            "default": false,
+            "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+          }
+        ]
+      },
+        {
+      "type": "collapsible_row",
+      "name": "addedDetails",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Added Details",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label",
+          "info": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.info"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label"
+        }
+      ]}
+  ],
+  "presets": [
+    {
+      "name": "Discount Banner", 
+      "category": "Image"  
+    }
+  ]
+}
+{% endschema %}
